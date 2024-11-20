@@ -2,11 +2,11 @@ from pyspark.sql import SparkSession
 from pyspark.sql.types import StructField, StructType, StringType, TimestampType
 
 
-BUCKET_NAME = "YOUR_BUCKET_NAME"
+BUCKET_NAME = "deb4-bootcamp-014"
 BUSINESS_DOMAIN = "networkrail"
 SOURCE_FOLDER = f"{BUSINESS_DOMAIN}/raw"
 DESTINATION_FOLDER = f"{BUSINESS_DOMAIN}/processed"
-KEYFILE_PATH = "/opt/spark/pyspark/YOUR_KEYFILE.json"
+KEYFILE_PATH = "/opt/spark/pyspark/deb4-data-transformation-with-sparks.json"
 
 spark = SparkSession.builder.appName("demo_gcs") \
     .config("spark.memory.offHeap.enabled", "true") \
