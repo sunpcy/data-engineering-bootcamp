@@ -193,3 +193,5 @@ data/
 
 # DEB dataengineercafe keyfiles
 dataengineercafe-*.json
+deb4-*.json
+turing-chess-*.json

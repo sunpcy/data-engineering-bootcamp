@@ -22,19 +22,19 @@ with DAG(
     schedule_interval=None,
     start_date=timezone.datetime(2024, 7, 30),
     catchup=False,
-    tags=["spark"],
+    tags=["spark", "DEB"],
 ):
 
     submit_demo_app = SparkSubmitOperator(
         task_id="submit_demo_app",
-        application="/opt/airflow/dags/demo.py",
+        application="/opt/spark/pyspark/demo.py",
         conn_id="my_spark",
     )
 
-    submit_demo_gcs_app = SparkSubmitOperator(
-        task_id="submit_demo_gcs_app",
-        application="/opt/airflow/dags/demo_gcs.py",
-        conn_id="my_spark",
-    )
+    # submit_demo_gcs_app = SparkSubmitOperator(
+    #     task_id="submit_demo_gcs_app",
+    #     application="/opt/airflow/dags/demo_gcs.py",
+    #     conn_id="my_spark",
+    # )
 
-    submit_demo_app >> submit_demo_gcs_app
+    # submit_demo_app >> submit_demo_gcs_app
